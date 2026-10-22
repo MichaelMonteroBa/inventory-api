@@ -1,0 +1,18 @@
+# Visual Studio / JetBrains Rider / VS Code
+.idea/
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Compilación y archivos temporales de .NET
+bin/
+obj/
+[Bb]in/
+[Oo]bj/
+
+# Configuración del sistema y logs
+.DS_Store
+*.log

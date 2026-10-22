@@ -1,0 +1,25 @@
+@Inventory.Api_HostAddress = http://localhost:5021
+
+
+
+###
+
+### Obtener todas las categorías
+GET http://localhost:5021/api/Categories
+Accept: application/json
+
+###
+
+### Crear una nueva categoría
+POST http://localhost:5021/api/Categories
+Content-Type: application/json
+
+{
+  "name": "Ropa_Vestir",
+  "description": "Ropa de vestir y Vestidos para dama"
+}
+
+###
+
+### Borrar una categoría
+DELETE http://localhost:5021/api/Categories/
