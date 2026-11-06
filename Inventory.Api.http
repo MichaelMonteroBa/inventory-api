@@ -15,11 +15,11 @@ POST http://localhost:5021/api/Categories
 Content-Type: application/json
 
 {
-  "name": "Ropa_Vestir",
+  "name": "Ropa Vestir",
   "description": "Ropa de vestir y Vestidos para dama"
 }
 
 ###
 
 ### Borrar una categoría
-DELETE http://localhost:5021/api/Categories/
+DELETE http://localhost:5021/api/Categories/d1099152-277a-428d-a7df-435f7dcfff02
