@@ -71,11 +71,12 @@ namespace Inventory.Api.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<Guid>("SupplierId")
+                    b.Property<Guid?>("SupplierId")
                         .HasColumnType("char(36)");
 
                     b.Property<decimal>("UnitPrice")
-                        .HasColumnType("decimal(65,30)");
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("UnitsInStock")
                         .HasColumnType("int");
@@ -200,9 +201,7 @@ namespace Inventory.Api.Migrations
 
                     b.HasOne("Inventory.Api.Models.Supplier", "Supplier")
                         .WithMany("Products")
-                        .HasForeignKey("SupplierId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("SupplierId");
 
                     b.Navigation("Category");
 

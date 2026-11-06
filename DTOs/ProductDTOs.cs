@@ -8,6 +8,7 @@ public class ProductDto
     public string? Description { get; set; }
     public decimal Price { get; set; }
     public int Stock { get; set; }
+    public string SKU { get; set; } = string.Empty;
     public Guid CategoryId { get; set; }
     public string CategoryName { get; set; } = string.Empty; // Opcional, útil para mostrar el nombre de la categoría
 }
@@ -19,6 +20,7 @@ public class CreateProductDto
     public string? Description { get; set; }
     public decimal Price { get; set; }
     public int Stock { get; set; }
+    public string SKU { get; set; } = string.Empty;
     public Guid CategoryId { get; set; }
 }
 
@@ -29,5 +31,6 @@ public class UpdateProductDto
     public string? Description { get; set; }
     public decimal Price { get; set; }
     public int Stock { get; set; }
+    public string SKU { get; set; } = string.Empty;
     public Guid CategoryId { get; set; }
 }

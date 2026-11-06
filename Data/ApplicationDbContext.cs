@@ -31,5 +31,9 @@ public class ApplicationDbContext : DbContext
             entity.HasIndex(c => c.Name)
                 .IsUnique();
         });
+        
+        modelBuilder.Entity<Product>()
+            .Property(p => p.UnitPrice)
+            .HasPrecision(18, 2);
     }
 }

@@ -22,4 +22,44 @@ Content-Type: application/json
 ###
 
 ### Borrar una categoría
-DELETE http://localhost:5021/api/Categories/d1099152-277a-428d-a7df-435f7dcfff02
+DELETE http://localhost:5021/api/Categories/
+###
+
+### Obtener todos los productos
+GET http://localhost:5021/api/Products
+Accept: application/json
+
+###
+
+### Crear un nuevo producto (asegúrate de usar un ID de categoría válido que ya tengas creado)
+POST http://localhost:5021/api/Products
+Content-Type: application/json
+
+{
+  "name": "Auriculares Inalámbricos Bluetooth",
+  "description": "Audífonos de diadema con cancelación de ruido y micrófono integrado",
+  "price": 1899.99,
+  "stock": 15,
+  "sku": "",
+  "categoryId": "4dbb4791-2e0e-4334-8cab-75720890207d"
+}
+
+###
+
+### Actualizar producto (PUT)
+PUT http://localhost:5021/api/Products/25ee8dd5-4909-470f-aab4-379d965f0369
+Content-Type: application/json
+
+{
+  "name": "Auriculares Inalámbricos Bluetooth",
+  "description": "Audífonos con cancelación de ruido y micrófono integrado",
+  "price": 1899.99,
+  "stock": 15,
+  "sku": "",
+  "categoryId": "4dbb4791-2e0e-4334-8cab-75720890207d"
+}
+
+###
+
+### Eliminar producto
+DELETE http://localhost:5021/api/Products/

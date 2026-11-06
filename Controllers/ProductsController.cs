@@ -30,6 +30,7 @@ namespace Inventory.Api.Controllers
                     Description = p.Description,
                     Price = p.UnitPrice,
                     Stock = p.UnitsInStock,
+                    SKU = p.SKU,
                     CategoryId = p.CategoryId,
                     CategoryName = p.Category != null ? p.Category.Name : string.Empty
                 })
@@ -52,6 +53,7 @@ namespace Inventory.Api.Controllers
                     Description = p.Description,
                     Price = p.UnitPrice,
                     Stock = p.UnitsInStock,
+                    SKU = p.SKU,
                     CategoryId = p.CategoryId,
                     CategoryName = p.Category != null ? p.Category.Name : string.Empty
                 })
@@ -83,6 +85,9 @@ namespace Inventory.Api.Controllers
                 Description = createDto.Description,
                 UnitPrice = createDto.Price,
                 UnitsInStock = createDto.Stock,
+                SKU = string.IsNullOrWhiteSpace(createDto.SKU) 
+                    ? "SKU-" + Guid.NewGuid().ToString().Substring(0, 6).ToUpper() 
+                    : createDto.SKU, // <-- Esto evita que vaya nulo si se te olvida mandarlo en el JSON
                 CategoryId = createDto.CategoryId
             };
 
@@ -126,6 +131,7 @@ namespace Inventory.Api.Controllers
             product.Description = updateDto.Description;
             product.UnitPrice = updateDto.Price;
             product.UnitPrice = updateDto.Stock;
+            product.SKU = string.IsNullOrWhiteSpace(updateDto.SKU) ? product.SKU : updateDto.SKU;
             product.CategoryId = updateDto.CategoryId;
 
             _context.Entry(product).State = EntityState.Modified;
